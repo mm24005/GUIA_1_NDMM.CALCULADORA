@@ -14,25 +14,67 @@ namespace NDMM.Calculadora.Tests
         [TestMethod()]
         public void AddTest()
         {
-            Assert.Fail();
+            // Arrange
+            Calculator calculator = new Calculator();
+
+            // Act
+            double result = calculator.Add(5, 3);
+
+            // Assert
+            Assert.AreEqual(8, result);
+
         }
+
 
         [TestMethod()]
         public void SubtractTest()
         {
-            Assert.Fail();
+            // Arrange
+            Calculator calculator = new Calculator();
+
+            // Act
+            double result = calculator.Subtract(5, 3);
+
+            // Assert
+            Assert.AreEqual(2, result);
         }
 
         [TestMethod()]
         public void MultiplyTest()
         {
-            Assert.Fail();
+            // Arrange
+            Calculator calculator = new Calculator();
+
+            // Act
+            double result = calculator.Multiply(5, 3);
+
+            // Assert
+            Assert.AreEqual(15, result);
         }
 
         [TestMethod()]
         public void DivideTest()
         {
-            Assert.Fail();
+            // Arrange
+            Calculator calculator = new Calculator();
+
+            // Act
+            double result = calculator.Divide(6, 2);
+
+            // Assert
+            Assert.AreEqual(3, result);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DivideByZeroTest()
+        {
+            // Arrange
+            Calculator calculator = new Calculator();
+
+            // Act (Expecting an exception)
+            double result = calculator.Divide(5, 0);
+        }
+
     }
 }
